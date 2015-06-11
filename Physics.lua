@@ -4,7 +4,7 @@ boxMeshPt = nil
 cylinderMeshPt = nil
 
 -- Movable rigid bodies
-numberOfRigidBodies = 5 --    <<<<<<< OVU VARIJABLU ZELITE MJENJATI!! :-) :-) >>>>>>>
+numberOfRigidBodies = 80 --    <<<<<<< OVU VARIJABLU ZELITE MJENJATI!! :-) :-) >>>>>>>
 rgdBodyPt = {}    -- new arrays
 meshObjPt = {}
 for i=1, numberOfRigidBodies do
@@ -21,8 +21,8 @@ groundMeshObjPt = nil
 function Start()
 	
 	math.randomseed(1234)
-	boxMeshPt = GenerateMesh_Box(1.0, 2.0, 1.0)
-	cylinderMeshPt = GenerateMesh_Cylinder(2.0, 0.8, 0.8, 3, 1)
+	boxMeshPt = GenerateMesh_Box(1.0, 1.0, 1.0)
+	cylinderMeshPt = GenerateMesh_Cylinder(1.0, 0.8, 0.8, 3, 1)
 	for i=1, numberOfRigidBodies do
 		local tempPt = nil
 		if (math.random() > 0.5) then
@@ -30,13 +30,13 @@ function Start()
 		else
 			tempPt = cylinderMeshPt
 		end
-		rgdBodyPt[i] = AddRigidBody(tempPt, true, -2.0 + math.random()*5.0, 10.5 + i*2.0, -2.0 + math.random()*5.0)
+		rgdBodyPt[i] = AddRigidBody(tempPt, true, -25.0 + math.random()*50.0, 10.5 + i*2.0, -25.0 + math.random()*50.0)
 		pX, pY, pZ, rX, rY, rZ, rW = GetRigidBodyCoords(rgdBodyPt[i])
 		meshObjPt[i] = object3D.add(tempPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
 	end
 
 	-- Ground
-	groundMeshPt = GenerateMesh_Box(20.0, 2.0, 20.0)
+	groundMeshPt = GenerateMesh_Box(50.0, 2.0, 50.0)
 	groundRgdBodyPt = AddRigidBody(groundMeshPt, false, 0.0, -1.0, 0.0)
 	pX, pY, pZ, rX, rY, rZ, rW = GetRigidBodyCoords(groundRgdBodyPt)
 	groundMeshObjPt = object3D.add(groundMeshPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)

@@ -6,7 +6,7 @@ boxMeshCSPt = nil
 cylinderMeshCSPt = nil
 
 -- Movable rigid bodies
-numberOfRigidBodies = 5 --    <<<<<<< OVU VARIJABLU ZELITE MJENJATI!! :-) :-) >>>>>>>
+numberOfRigidBodies = 50 --    <<<<<<< OVU VARIJABLU ZELITE MJENJATI!! :-) :-) >>>>>>>
 rgdBodyPt = {}    -- new arrays
 meshObjPt = {}
 for i=1, numberOfRigidBodies do
@@ -39,7 +39,7 @@ function Start()
 			tempPt = cylinderMeshPt
 			tempCSPt = cylinderMeshCSPt
 		end
-		rgdBodyPt[i] = physics.addRigidBody(tempCSPt, true, -2.0 + math.random()*5.0, 10.5 + i*2.0, -2.0 + math.random()*5.0)
+		rgdBodyPt[i] = physics.addRigidBody(tempCSPt, true, true, -5.0 + math.random()*10.0, 10.5 + i*2.0, -5.0 + math.random()*10.0)
 		pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(rgdBodyPt[i])
 		meshObjPt[i] = object3D.add(tempPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
 	end
@@ -47,7 +47,7 @@ function Start()
 	-- Ground
 	groundMeshPt = GenerateMesh_Box(20.0, 2.0, 20.0)
 	groundMeshCSPt = physics.addMeshCollisionSkin(groundMeshPt)
-	groundRgdBodyPt = physics.addRigidBody(groundMeshCSPt, false, 0.0, -1.0, 0.0)
+	groundRgdBodyPt = physics.addRigidBody(groundMeshCSPt, false, false, 0.0, -1.0, 0.0)
 	pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(groundRgdBodyPt)
 	groundMeshObjPt = object3D.add(groundMeshPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
 end
