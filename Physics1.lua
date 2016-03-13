@@ -6,7 +6,7 @@ boxMeshCSPt = nil
 cylinderMeshCSPt = nil
 
 -- Movable rigid bodies
-numberOfRigidBodies = 50 --    <<<<<<< OVU VARIJABLU ZELITE MJENJATI!! :-) :-) >>>>>>>
+numberOfRigidBodies = 20
 rgdBodyPt = {}    -- new arrays
 meshObjPt = {}
 for i=1, numberOfRigidBodies do

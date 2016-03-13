@@ -39,8 +39,8 @@ end
 -- Called before the script is finished.
 function Stop()
 
-	texture.remove(grayColorTex)
-	font.remove(mainFont)
+	texture.unload(grayColorTex)
+	font.unload(mainFont)
 	text.remove(text1)
 	text.remove(text2)
 	text.remove(text3)

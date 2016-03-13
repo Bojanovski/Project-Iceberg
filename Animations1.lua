@@ -11,7 +11,7 @@ isSimulating = false
 -- Called right after the script is loaded.
 function Start()
 	mainFont = font.load("Arial")
-	text1 = text.add(mainFont, "PRESS 3 FOR RAGDOLL XD", 0.02, 0.02, 1.8, 0.9, 0.9, 0.9)
+	--text1 = text.add(mainFont, "PRESS 3 FOR RAGDOLL XD", 0.02, 0.02, 1.8, 0.9, 0.9, 0.9)
 
 	model1Pt = LoadModel("Models\\Khnum.X")
 	objectPt = object3D.add(model1Pt, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.2, 0.2, 0.2, false, false)
@@ -20,8 +20,17 @@ function Start()
 	-- Ground
 	groundMeshPt = GenerateMesh_Box(20.0, 5.9, 20.0)
 	groundMeshCSPt = physics.addMeshCollisionSkin(groundMeshPt)
-	groundRgdBodyPt = physics.addRigidBody(groundMeshCSPt, false, false, 0.0, -3.0, 0.0)
-	pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(groundRgdBodyPt)
+	groundRgdBodyPt0 = physics.addRigidBody(groundMeshCSPt, false, false, 0.0, -3.0, -10.0)
+	groundRgdBodyPt1 = physics.addRigidBody(groundMeshCSPt, false, false, 0.0, -7.0, -8.0)
+	groundRgdBodyPt2 = physics.addRigidBody(groundMeshCSPt, false, false, 0.0, -11.0, -6.0)
+	groundRgdBodyPt3 = physics.addRigidBody(groundMeshCSPt, false, false, 0.0, -15.0, -4.0)
+	pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(groundRgdBodyPt0)
+	groundMeshObjPt = object3D.add(groundMeshPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
+	pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(groundRgdBodyPt1)
+	groundMeshObjPt = object3D.add(groundMeshPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
+	pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(groundRgdBodyPt2)
+	groundMeshObjPt = object3D.add(groundMeshPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
+	pX, pY, pZ, rX, rY, rZ, rW = physics.getRigidBodyCoords(groundRgdBodyPt3)
 	groundMeshObjPt = object3D.add(groundMeshPt, pX, pY, pZ, rX, rY, rZ, rW, 1.0, 1.0, 1.0, false, false)
 end
 
@@ -29,6 +38,7 @@ end
 function Update(dt)
 
 	vrijeme = vrijeme + dt/3
+	--object3D.update(objectPt, 0,0,vrijeme*10, 0,0,0,1, 0.2,0.2,0.2)
 
 	local gDown = input.isKeyDown(0x47) 
 	object3D.setWireframe(objectPt, (gDown > 0.0))
@@ -50,9 +60,12 @@ function Update(dt)
 		isSimulating = true
 	end
 
-	object3D.update(objectPt, -10.0*math.cos(vrijeme), 0.0, -10.0*math.sin(vrijeme),
-	 0.0, math.cos(vrijeme/2.0), 0.0, math.sin(vrijeme/2.0),
-	 0.2, 0.2, 0.2)
+
+	if (vrijeme > 1.0 and isSimulating == false) then
+		object3D.startSimulation(objectPt)
+		isSimulating = true
+	end
+
 
 end
 

@@ -49,13 +49,13 @@ end
 function Update(dt)
 	
 	timer = timer + dt
-	camera.lookAt(17.0*math.sin(timer*0.2), 4.0, -17.0*math.cos(timer*0.2), 0.0, -3.0, 0.0);
+	camera.lookAt(27.0*math.sin(timer*0.2), 4.0, -17.0*math.cos(timer*0.2), 0.0, -3.0, 0.0);
 
 end
 
 -- Called before the script is finished.
 function Stop()
 
-	texture.remove(diffuseTex)
+	texture.unload(diffuseTex)
 
 end

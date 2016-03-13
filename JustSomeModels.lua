@@ -44,14 +44,15 @@ function Update(dt)
 
 	local fDown = input.isKeyDown(0x46)
 	if (fDown > 0.0) then
-	vrijeme2 = 0
+		vrijeme2 = 0
 		SetNextFrameProperties(fDown + 1, true)
 	else
 		SetNextFrameProperties(0, true)
 	end
 
+	
 	object3D.update(tankObjectPt, -10.0*math.cos(vrijeme2/5.0), 0.0, -10.0*math.sin(vrijeme2/5.0), 0.0, 0.0, 0.0, 1.0, 0.5, 0.5, 0.5)
-
+	
 
 	--object3D.update(tankObjectPt,
 	-- c1x + c2x*math.exp(-c*vrijeme2/m) + vrijeme2*gx*m/c,
