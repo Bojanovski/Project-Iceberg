@@ -1,6 +1,4 @@
 
-time = 0
-
 -- Called right after the script is loaded.
 function Start()
 
@@ -18,14 +16,10 @@ function Start()
 
 	--StartAnotherScript("Stats.lua")
 
-	time = 0
-
 end
  
 -- Called before every frame is rendered.
 function Update(dt)
-
-		time = time + dt
 
 end
 
