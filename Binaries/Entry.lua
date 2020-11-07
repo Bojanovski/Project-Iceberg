@@ -6,11 +6,11 @@ function Start()
 	mainFont = font.load("Bickham Script Pro Semibold")
 	text1 = text.add(mainFont, "", 0.02, 0.02, 1.9, 0.9, 0.9, 0.9)
 
-	StartAnotherScript("Physics1.lua")
+	--StartAnotherScript("Physics1.lua")
 	--StartAnotherScript("JustSomeModels.lua")
 	--StartAnotherScript("Animations1.lua")
 	--StartAnotherScript("ClothSimulation1.lua")
-	--StartAnotherScript("ClothSimulation2.lua")
+	StartAnotherScript("ClothSimulation2.lua")
 	--StartAnotherScript("Particles.lua")
 	--StartAnotherScript("TextureGenerating.lua")
 
