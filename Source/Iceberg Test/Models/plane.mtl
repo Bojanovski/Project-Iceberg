@@ -1,0 +1,66 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 20.09.2013 16:17:09
+
+newmtl 02___Default
+	Ns 15.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 1.0000 0.6157
+	Kd 0.5882 1.0000 0.6157
+	Ks 0.0600 0.0600 0.0600
+	Ke 0.0000 0.0000 0.0000
+	map_Ka floor.dds
+	map_Kd floor.dds
+	map_bump floor_nmap.dds
+	bump floor_nmap.dds
+
+newmtl Standard_7
+	Ns 7.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1350 0.1350 0.1350
+	Ke 0.0000 0.0000 0.0000
+	map_Ka earth.dds
+	map_Kd earth.dds
+	map_bump earth_nmap.dds
+	bump earth_nmap.dds
+
+newmtl cajanka
+	Ns 38.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.8392 0.3451 0.2627
+	Kd 0.8392 0.3451 0.2627
+	Ks 1.0000 1.0000 1.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka floor.dds
+	map_Kd floor.dds
+	map_bump floor_nmap.dds
+	bump floor_nmap.dds
+
+newmtl default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 1.0000 1.0000 1.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1800 0.1800 0.1800
+	Ke 0.0000 0.0000 0.0000
+	map_Ka bricks.dds
+	map_Kd bricks.dds
+	map_bump bricks_nmap.dds
+	bump bricks_nmap.dds

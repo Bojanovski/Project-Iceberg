@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game Files">
+      <UniqueIdentifier>{1060bdfe-d424-465f-9c7f-fc2907ee393f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Files\Fonts">
+      <UniqueIdentifier>{1e4f0ce0-deed-4811-b6bc-13572f99e7b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Files\Textures">
+      <UniqueIdentifier>{5b3cc89a-64c7-4b14-a5a9-a90e4f77ec7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Files\Fonts\Bickham Script Pro Semibold">
+      <UniqueIdentifier>{1c0aa774-1b9a-4e0f-8b73-dd1266a82c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Files\Fonts\Arial">
+      <UniqueIdentifier>{ee7dcd72-bf2f-4aea-8930-d5c8a3c82194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{a33638e1-a938-41a6-994d-887352f0604a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FX">
+      <UniqueIdentifier>{67b91c10-f788-4eac-bc75-32e278b7232a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FPCameraController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InitD3DApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneVoronoizator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FPCameraController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitD3DApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneVoronoizator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JustSomeModels.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Fonts\Bickham Script Pro Semibold\coord.fnt">
+      <Filter>Game Files\Fonts\Bickham Script Pro Semibold</Filter>
+    </None>
+    <None Include="Fonts\Arial\coord.fnt">
+      <Filter>Game Files\Fonts\Arial</Filter>
+    </None>
+    <None Include="ClothSimulation1.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="ClothSimulation2.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Stats.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Physics1.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Physics2.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="PhysicsJoints1.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="PhysicsJoints2.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Animations1.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Particles.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="TextureGenerating.lua">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="Space.lua">
+      <Filter>Scripts</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fonts\Bickham Script Pro Semibold\tex.dds">
+      <Filter>Game Files\Fonts\Bickham Script Pro Semibold</Filter>
+    </Image>
+    <Image Include="Fonts\Arial\tex.dds">
+      <Filter>Game Files\Fonts\Arial</Filter>
+    </Image>
+    <Image Include="Textures\grayGUI.dds">
+      <Filter>Game Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\cloth_texture.dds">
+      <Filter>Game Files\Textures</Filter>
+    </Image>
+    <Image Include="Textures\grayCubeMap.dds">
+      <Filter>Game Files\Textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Entry.lua">
+      <Filter>Scripts</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="TextureGenerator.fx" />
+  </ItemGroup>
+</Project>

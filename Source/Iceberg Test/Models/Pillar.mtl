@@ -1,0 +1,18 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl 07___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.8 0.8 0.8
+	Kd 0.4 0.4 0.4
+	Ks 0.2 0.2 0.2
+	Ke 0.0000 0.0000 0.0000
+	map_Ka pillar.dds
+	map_Kd pillar.dds
+	map_bump pillar_nmap.dds
+	bump pillar_nmap.dds

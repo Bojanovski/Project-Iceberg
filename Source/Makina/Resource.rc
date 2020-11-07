@@ -1,0 +1,14 @@
+#include "Resource.h"
+#include "windows.h"
+
+
+ID_RESIZE  BITMAP  "resizing.bmp"
+ID_2DGRAPHICS					TID_FX  "FX\\2DGraphics.fxo"
+ID_BASIC						TID_FX  "FX\\Basic.fxo"
+ID_BLUR							TID_FX  "FX\\Blur.fxo"
+ID_SKY							TID_FX  "FX\\Sky.fxo"
+ID_TEXTUREGENERATOR				TID_FX  "FX\\TextureGenerator.fxo"
+ID_PARTICLES					TID_FX  "FX\\Particles.fxo"
+ID_CPSURFACES					TID_FX  "FX\\CPSurfaces.fxo"
+ID_SSAO							TID_FX  "FX\\SSAO.fxo"
+ID_NEBULA						TID_FX  "FX\\Nebula.fxo"

@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F1860B2F-8D38-4EEE-BEE9-501D1000BC4E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Makina</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(DXSDK_DIR)Samples\C++\Effects11VS2015\Inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(DXSDK_DIR)Samples\C++\Effects11VS2015\Debug;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(DXSDK_DIR)Utilities\bin\x86;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(DXSDK_DIR)Samples\C++\Effects11VS2015\Inc;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(DXSDK_DIR)Samples\C++\Effects11VS2015\Release;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(DXSDK_DIR)Utilities\bin\x86;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MAKINA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;d3dx11d.lib;D3DCompiler.lib;Effects11.lib;dxerr.lib;dxgi.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EmbedManagedResourceFile>
+      </EmbedManagedResourceFile>
+      <NoEntryPoint>false</NoEntryPoint>
+      <AddModuleNamesToAssembly>
+      </AddModuleNamesToAssembly>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MAKINA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d11.lib;d3dx11.lib;D3DCompiler.lib;Effects11.lib;dxerr.lib;dxgi.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Fire.h" />
+    <ClInclude Include="MeshAnimationData.h" />
+    <ClInclude Include="AnimationPlayer.h" />
+    <ClInclude Include="BaseForm.h" />
+    <ClInclude Include="BasicEffect.h" />
+    <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="BlurEffect.h" />
+    <ClInclude Include="BSplineSurface.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraController.h" />
+    <ClInclude Include="Cloth.h" />
+    <ClInclude Include="CollisionBin.h" />
+    <ClInclude Include="BinnedCollisionSpace.h" />
+    <ClInclude Include="CollisionDetector.h" />
+    <ClInclude Include="CollisionResolver.h" />
+    <ClInclude Include="CollisionSkin.h" />
+    <ClInclude Include="CollisionData.h" />
+    <ClInclude Include="ContentLoader.h" />
+    <ClInclude Include="C\lapi.h" />
+    <ClInclude Include="C\lauxlib.h" />
+    <ClInclude Include="C\lcode.h" />
+    <ClInclude Include="C\lctype.h" />
+    <ClInclude Include="C\ldebug.h" />
+    <ClInclude Include="C\ldo.h" />
+    <ClInclude Include="C\lfunc.h" />
+    <ClInclude Include="C\lgc.h" />
+    <ClInclude Include="C\llex.h" />
+    <ClInclude Include="C\llimits.h" />
+    <ClInclude Include="C\lmem.h" />
+    <ClInclude Include="C\lobject.h" />
+    <ClInclude Include="C\lopcodes.h" />
+    <ClInclude Include="C\lparser.h" />
+    <ClInclude Include="C\lstate.h" />
+    <ClInclude Include="C\lstring.h" />
+    <ClInclude Include="C\ltable.h" />
+    <ClInclude Include="C\ltm.h" />
+    <ClInclude Include="C\lua.h" />
+    <ClInclude Include="C\lua.hpp" />
+    <ClInclude Include="C\luaconf.h" />
+    <ClInclude Include="C\lualib.h" />
+    <ClInclude Include="C\lundump.h" />
+    <ClInclude Include="C\lvm.h" />
+    <ClInclude Include="C\lzio.h" />
+    <ClInclude Include="D3DApp.h" />
+    <ClInclude Include="D3DAppValues.h" />
+    <ClInclude Include="DirectX11Headers.h" />
+    <ClInclude Include="DynamicCubeMap.h" />
+    <ClInclude Include="Effect.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="Font.h" />
+    <ClInclude Include="ForceGenerators.h" />
+    <ClInclude Include="FullScreenQuad.h" />
+    <ClInclude Include="GameComponent.h" />
+    <ClInclude Include="GameStatesManager.h" />
+    <ClInclude Include="GameTimer.h" />
+    <ClInclude Include="D3DUtilities.h" />
+    <ClInclude Include="Geometry.h" />
+    <ClInclude Include="HingeJoint.h" />
+    <ClInclude Include="HostedList.h" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Joint.h" />
+    <ClInclude Include="LuaScript.h" />
+    <ClInclude Include="MathHelper.h" />
+    <ClInclude Include="MeshSimulationData.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelFileLoader.h" />
+    <ClInclude Include="MouseState.h" />
+    <ClInclude Include="BasicModel.h" />
+    <ClInclude Include="PCGObject.h" />
+    <ClInclude Include="Planet.h" />
+    <ClInclude Include="SceneMapper.h" />
+    <ClInclude Include="OBJFileLoader.h" />
+    <ClInclude Include="Object2D.h" />
+    <ClInclude Include="ParticleSystemManager.h" />
+    <ClInclude Include="PhysicsHeaders.h" />
+    <ClInclude Include="PhysicsSystem.h" />
+    <ClInclude Include="PhysicsUtil.h" />
+    <ClInclude Include="RagdollAnimationPlayer.h" />
+    <ClInclude Include="RigidBody.h" />
+    <ClInclude Include="RigidBodyForceRegistry.h" />
+    <ClInclude Include="SkinnedModel.h" />
+    <ClInclude Include="Subset.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="RenderStatesManager.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ShadowMap.h" />
+    <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="Sparks.h" />
+    <ClInclude Include="SSAO.h" />
+    <ClInclude Include="ProcessAndSystemData.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="TextureGenerator.h" />
+    <ClInclude Include="TextureLoader.h" />
+    <ClInclude Include="AsyncWorker.h" />
+    <ClInclude Include="UniversalJoint.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="XFileLoader.h" />
+    <ClInclude Include="XnaCollision.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Fire.cpp" />
+    <ClCompile Include="MeshAnimationData.cpp" />
+    <ClCompile Include="AnimationPlayer.cpp" />
+    <ClCompile Include="BaseForm.cpp" />
+    <ClCompile Include="BasicEffect.cpp" />
+    <ClCompile Include="Bitmap.cpp" />
+    <ClCompile Include="BlurEffect.cpp" />
+    <ClCompile Include="BSplineSurface.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="BinnedCollisionSpace.cpp" />
+    <ClCompile Include="Cloth.cpp" />
+    <ClCompile Include="CollisionData.cpp" />
+    <ClCompile Include="CollisionDetector.cpp" />
+    <ClCompile Include="CollisionResolver.cpp" />
+    <ClCompile Include="CollisionSkin.cpp" />
+    <ClCompile Include="ContentLoader.cpp" />
+    <ClCompile Include="C\lapi.c" />
+    <ClCompile Include="C\lauxlib.c" />
+    <ClCompile Include="C\lbaselib.c" />
+    <ClCompile Include="C\lbitlib.c" />
+    <ClCompile Include="C\lcode.c" />
+    <ClCompile Include="C\lcorolib.c" />
+    <ClCompile Include="C\lctype.c" />
+    <ClCompile Include="C\ldblib.c" />
+    <ClCompile Include="C\ldebug.c" />
+    <ClCompile Include="C\ldo.c" />
+    <ClCompile Include="C\ldump.c" />
+    <ClCompile Include="C\lfunc.c" />
+    <ClCompile Include="C\lgc.c" />
+    <ClCompile Include="C\linit.c" />
+    <ClCompile Include="C\liolib.c" />
+    <ClCompile Include="C\llex.c" />
+    <ClCompile Include="C\lmathlib.c" />
+    <ClCompile Include="C\lmem.c" />
+    <ClCompile Include="C\loadlib.c" />
+    <ClCompile Include="C\lobject.c" />
+    <ClCompile Include="C\lopcodes.c" />
+    <ClCompile Include="C\loslib.c" />
+    <ClCompile Include="C\lparser.c" />
+    <ClCompile Include="C\lstate.c" />
+    <ClCompile Include="C\lstring.c" />
+    <ClCompile Include="C\lstrlib.c" />
+    <ClCompile Include="C\ltable.c" />
+    <ClCompile Include="C\ltablib.c" />
+    <ClCompile Include="C\ltm.c" />
+    <ClCompile Include="C\lundump.c" />
+    <ClCompile Include="C\lvm.c" />
+    <ClCompile Include="C\lzio.c" />
+    <ClCompile Include="D3DApp.cpp" />
+    <ClCompile Include="DynamicCubeMap.cpp" />
+    <ClCompile Include="Effect.cpp" />
+    <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="ForceGenerators.cpp" />
+    <ClCompile Include="FullScreenQuad.cpp" />
+    <ClCompile Include="GameComponent.cpp" />
+    <ClCompile Include="GameStatesManager.cpp" />
+    <ClCompile Include="GameTimer.cpp" />
+    <ClCompile Include="Geometry.cpp" />
+    <ClCompile Include="HingeJoint.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="Joint.cpp" />
+    <ClCompile Include="LuaScript.cpp" />
+    <ClCompile Include="MathHelper.cpp" />
+    <ClCompile Include="MeshSimulationData.cpp" />
+    <ClCompile Include="ModelFileLoader.cpp" />
+    <ClCompile Include="Planet.cpp" />
+    <ClCompile Include="SceneMapper.cpp" />
+    <ClCompile Include="Object2D.cpp" />
+    <ClCompile Include="BasicModel.cpp" />
+    <ClCompile Include="ParticleSystemManager.cpp" />
+    <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PhysicsUtil.cpp" />
+    <ClCompile Include="RagdollAnimationPlayer.cpp" />
+    <ClCompile Include="RigidBody.cpp" />
+    <ClCompile Include="RigidBodyForceRegistry.cpp" />
+    <ClCompile Include="SkinnedModel.cpp" />
+    <ClCompile Include="Subset.cpp" />
+    <ClCompile Include="OBJFileLoader.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="RenderStatesManager.cpp" />
+    <ClCompile Include="ShadowMap.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="Sparks.cpp" />
+    <ClCompile Include="SSAO.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="TextureGenerator.cpp" />
+    <ClCompile Include="TextureLoader.cpp" />
+    <ClCompile Include="AsyncWorker.cpp" />
+    <ClCompile Include="UniversalJoint.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="XFileLoader.cpp" />
+    <ClCompile Include="XnaCollision.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2DGraphics-Bitmap.fx" />
+    <None Include="2DGraphics-Text.fx" />
+    <None Include="2DGraphics-Utilities.fx" />
+    <CustomBuild Include="2DGraphics.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">2DGraphics-Bitmap.fx;2DGraphics-Text.fx;2DGraphics-Utilities.fx;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">2DGraphics-Bitmap.fx;2DGraphics-Text.fx;2DGraphics-Utilities.fx;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <None Include="Basic-LightDirShadowAndSSAOTech.fx" />
+    <None Include="Basic-NormalDepthTech.fx" />
+    <None Include="GeneralUtilities.fx" />
+    <None Include="Basic-GouraudTech.fx" />
+    <None Include="Basic-JustTexture.fx" />
+    <None Include="Basic-LightAndNTB.fx" />
+    <None Include="Basic-LightDirShadowTech.fx" />
+    <None Include="Basic-LightDirTessTech.fx" />
+    <None Include="Basic-LightFullTech.fx" />
+    <None Include="Basic-LightReflectionTech.fx" />
+    <None Include="LightsUtilities.fx" />
+    <None Include="Basic-LightDirTech.fx" />
+    <CustomBuild Include="Basic.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">GeneralUtilities.fx;Basic-NormalDepthTech.fx;Basic-GouraudTech.fx;Basic-JustTexture.fx;Basic-LightAndNTB.fx;Basic-LightDirTech.fx;Basic-LightDirShadowTech.fx;Basic-LightDirShadowAndSSAOTech.fx;Basic-LightDirTessTech.fx;Basic-LightFullTech.fx;Basic-LightReflectionTech.fx;LightsUtilities.fx;Basic-SkinnedLightDirShadowAndSSAOTech.fx;Basic-SkinnedNormalDepthTech.fx;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">GeneralUtilities.fx;Basic-NormalDepthTech.fx;Basic-GouraudTech.fx;Basic-JustTexture.fx;Basic-LightAndNTB.fx;Basic-LightDirTech.fx;Basic-LightDirShadowTech.fx;Basic-LightDirShadowAndSSAOTech.fx;Basic-LightDirTessTech.fx;Basic-LightFullTech.fx;Basic-LightReflectionTech.fx;LightsUtilities.fx;Basic-SkinnedLightDirShadowAndSSAOTech.fx;Basic-SkinnedNormalDepthTech.fx;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="Blur.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+    </CustomBuild>
+    <None Include="Particles-Sparks.fx" />
+    <None Include="Particles-Utilities.fx" />
+    <CustomBuild Include="Particles.fx">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Particles-Utilities.fx;Particles-Sparks.fx;Particles-Fire.fx;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Particles-Utilities.fx;Particles-Sparks.fx;Particles-Fire.fx;%(AdditionalInputs)</AdditionalInputs>
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <None Include="resizing.bmp" />
+    <CustomBuild Include="Sky.fx">
+      <FileType>Document</FileType>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="TextureGenerator.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TextureGenerator-RidgedPerlinMix1.fx;TextureGenerator-Utilities.fx;TextureGenerator-PerlinNoise.fx;TextureGenerator-RidgedMultifractal.fx;TextureGenerator-2DVoronoi.fx;TextureGenerator-Functions.fx;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TextureGenerator-RidgedPerlinMix1.fx;TextureGenerator-Utilities.fx;TextureGenerator-PerlinNoise.fx;TextureGenerator-RidgedMultifractal.fx;TextureGenerator-2DVoronoi.fx;TextureGenerator-Functions.fx;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="SSAO.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SSAO-BlurTech.fx;SSAO-Utilities.fx;SSAO-RayCastingTech.fx;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SSAO-BlurTech.fx;SSAO-Utilities.fx;SSAO-RayCastingTech.fx;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <None Include="SSAO-BlurTech.fx" />
+    <None Include="SSAO-RayCastingTech.fx" />
+    <None Include="SSAO-Utilities.fx" />
+    <None Include="TextureGenerator-PerlinNoise.fx" />
+    <None Include="TextureGenerator-RidgedMultifractal.fx" />
+    <None Include="TextureGenerator-RidgedPerlinMix1.fx" />
+    <None Include="TextureGenerator-Utilities.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CPSurfaces.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CPSurfaces-Utilities.fx;LightsUtilities.fx;CPSurfaces-FinalComplete.fx;CPSurfaces-NormalDepthTech.fx;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CPSurfaces-Utilities.fx;LightsUtilities.fx;CPSurfaces-FinalComplete.fx;CPSurfaces-NormalDepthTech.fx;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CPSurfaces-NormalDepthTech.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CPSurfaces-Utilities.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CPSurfaces-FinalComplete.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic-SkinnedLightDirShadowAndSSAOTech.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic-SkinnedNormalDepthTech.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Particles-Fire.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TextureGenerator-2DVoronoi.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Nebula.fx">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">fxc /Fc /Od /Zi /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">FX\%(Filename).fxo</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">FX\%(Filename).fxo</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">fxc /T fx_5_0 /Fo "FX\%(Filename).fxo" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">LightsUtilities.fx;SSAO-Utilities.fx</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">LightsUtilities.fx;SSAO-Utilities.fx</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TextureGenerator-Functions.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
